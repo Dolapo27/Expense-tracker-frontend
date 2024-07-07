@@ -8,7 +8,7 @@ import IncomeItem from '../IncomeItem/IncomeItem';
 
 function Income() {
 
-  const {addIncome, getIncomes, incomes, deleteIncome, totalIncome} = useGlobalContext()
+  const { getIncomes, incomes, deleteIncome, totalIncome} = useGlobalContext()
 
   useEffect(()=> {
       getIncomes()
