@@ -12,6 +12,7 @@ function Income() {
 
   useEffect(()=> {
       getIncomes()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 

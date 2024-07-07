@@ -12,6 +12,7 @@ function Dashboard() {
     useEffect(() => {
         getIncomes()
         getExpense()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

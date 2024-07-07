@@ -2,15 +2,15 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/globalContext';
 import { InnerLayout } from '../../styles/Layout';
-import Form from '../Form/Form';
 import IncomeItem from '../IncomeItem/IncomeItem';
 import ExpenseForm from './ExpenseForm';
 
 function Expenses() {
-    const {addIncome,expenses, getExpense, deleteExpense, totalExpenses} = useGlobalContext()
+    const {expenses, getExpense, deleteExpense, totalExpenses} = useGlobalContext()
 
     useEffect(() =>{
       getExpense()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <ExpenseStyled>
