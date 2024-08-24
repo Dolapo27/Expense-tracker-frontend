@@ -1,10 +1,10 @@
 import {useState, createContext, useContext, } from "react";
 import axios from "axios"
 
-const BASE_URL = process.env.REACT_APP_BACKEND_URL;
-
+const BASE_URL = process.env.REACT_APP_BACKEND_URL
+console.log("Backend URL:", BASE_URL);
 const GlobalContext = createContext()
-
+   
 export const GlobalProvider = ({children}) => {
 
     const [incomes, setIncomes] = useState([])
@@ -14,7 +14,7 @@ export const GlobalProvider = ({children}) => {
 
     
     const addIncome = async(income) => {
-        await axios.post(`${BASE_URL}/add-income`, income)
+        await axios.post(`${BASE_URL}add-income`, income)
             .catch((err) => {
                 setError(err.response.data.message)
         })
@@ -24,13 +24,13 @@ export const GlobalProvider = ({children}) => {
 
 
     const getIncomes = async() => {
-        const response = await axios.get(`${BASE_URL}/get-incomes`)
+        const response = await axios.get(`${BASE_URL}get-incomes`)
         setIncomes(response.data)
         console.log(response.data)
     }
 
    const deleteIncome = async(id) => {
-     await axios.delete(`${BASE_URL}/delete-incomes/${id}`)
+     await axios.delete(`${BASE_URL}delete-incomes/${id}`)
     getIncomes()
    }
 
@@ -47,7 +47,7 @@ export const GlobalProvider = ({children}) => {
 
     //calcaulate expenses
      const addExpense = async (expense) => {
-         await axios.post(`${BASE_URL}/add-expenses`, expense)
+         await axios.post(`${BASE_URL}add-expenses`, expense)
             .catch((err) =>{
                 setError(err.response.data.message)
             })
@@ -56,13 +56,13 @@ export const GlobalProvider = ({children}) => {
     }
 
     const getExpense = async () => {
-        const response = await axios.get(`${BASE_URL}/get-expenses`)
+        const response = await axios.get(`${BASE_URL}get-expenses`)
         setExpenses(response.data)
         console.log(response.data)
     }
 
     const deleteExpense = async (id) => {
-        await axios.delete(`${BASE_URL}/delete-expense/${id}`)
+        await axios.delete(`${BASE_URL}delete-expense/${id}`)
         getExpense()
     }
 
