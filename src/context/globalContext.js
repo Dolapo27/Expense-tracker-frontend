@@ -1,9 +1,10 @@
 import {useState, createContext, useContext, } from "react";
 import axios from "axios"
 
-const BASE_URL =  process.env.REACT_APP_BACKEND_URL
+const BASE_URL = process.env.REACT_APP_BACKEND_URL
+console.log("Backend URL:", BASE_URL);
 const GlobalContext = createContext()
-
+   
 export const GlobalProvider = ({children}) => {
 
     const [incomes, setIncomes] = useState([])
