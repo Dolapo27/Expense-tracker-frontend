@@ -11,10 +11,8 @@
       "src": "/api/(.*)",
       "dest": "/api/$1"
     }
-  ],
-  "projectSettings": {
-    "framework": "nextjs"
-  }
+  ]
+
 }
 
   
