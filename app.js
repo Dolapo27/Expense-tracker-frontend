@@ -1,10 +1,10 @@
 //require is like import, you are importing the dotenv file
 const express = require('express')
 const cors = require('cors')
-const corsOptions = {
-    origin: ['http://localhost:3000', 'http://finance-monitor.vercel.app'], // Allow localhost for development and Vercel domain for production
-    optionsSuccessStatus: 200
-};
+// const corsOptions = {
+//     origin: ['http://localhost:3000', 'http://finance-monitor.vercel.app'], // Allow localhost for development and Vercel domain for production
+//     optionsSuccessStatus: 200
+// };
 const app = express()
 const { db } = require('./db/db')
 const {readdirSync} = require('fs')
@@ -17,7 +17,7 @@ const PORT = process.env.PORT
 
 //middlewares
 app.use(express.json())
-app.use(cors(corsOptions))
+app.use(cors())
  
 
 //routes
